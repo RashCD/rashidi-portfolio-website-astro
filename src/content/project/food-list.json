@@ -1,0 +1,12 @@
+{
+    "id": 3.1,
+    "name": "Food List",
+    "description": "Showcase food list with search functionality and categorise different types of food",
+    "images": ["/images/food-list.png"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://food-list-lemon.vercel.app/"
+    },
+    "tags": ["personal"]
+}

@@ -25,4 +25,21 @@ const work = defineCollection({
 	}),
 });
 
-export const collections = { blog, work };
+const project = defineCollection({
+	type: "data",
+	schema: z.object({
+		id: z.number(),
+		name: z.string(),
+		description: z.string(),
+		images: z.array(z.string()),
+		visit: z.object({
+			ios: z.string().optional(),
+			android: z.string().optional(),
+			web: z.string().optional(),
+			github: z.string().optional(),
+		}),
+		tags: z.array(z.string()),
+	}),
+});
+
+export const collections = { blog, work, project };

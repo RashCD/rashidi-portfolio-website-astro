@@ -1,0 +1,12 @@
+{
+    "id": 3.3,
+    "name": "RHB Discovery",
+    "description": "An app for RHB Bank customers to discover financial products and services tailored to their needs through insightful recommendations and personalized content",
+    "images": ["/images/rhb-discovery.png"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://rhb-discovery.vercel.app/"
+    },
+    "tags": ["personal"]
+}

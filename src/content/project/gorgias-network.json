@@ -1,0 +1,12 @@
+{
+    "id": 1.1,
+    "name": "Gorgias Network Sdn Bhd",
+    "description": "Gorgias Network, a Malaysian company, runs a mobile app targeting celebrities in Taiwan, Hong Kong, and China. Think Instagram, but niche and celebrity-focused. Users can posts, comments, likes, and follow, but with a twist towards influencer content and features. Gorgias Network caters to a specific audience within the social media sphere.",
+    "images": ["/images/gorgias.jpeg"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": ""
+    },
+    "tags": ["professional"]
+}

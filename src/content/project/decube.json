@@ -1,0 +1,12 @@
+{
+    "id": 2.2,
+    "name": "Decube",
+    "description": "Decube.io is a software company specializing in data observability, data cataloging, and data governance. They offer a unified platform designed to help businesses understand, trust, and manage their data effectively, particularly in the age of AI and machine learning. Their solutions aim to improve data quality, reduce risks, and empower data-driven decision making across an organization. With a focus on user-friendliness and innovation, Decube.io caters to various data users, from analysts to business leaders.",
+    "images": ["/images/decube-landing.png"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://www.decube.io"
+    },
+    "tags": ["freelance"]
+}

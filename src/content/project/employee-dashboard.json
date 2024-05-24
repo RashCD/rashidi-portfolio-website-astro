@@ -1,0 +1,13 @@
+{
+    "id": 3.2,
+    "name": "Employee Dashboard",
+    "description": "Employee dashboard app to manage, add, edit, delete, and search employees",
+    "full_description": "./mdfiles/employee-dashboard.md",
+    "images": ["/images/employee-dashboard.png"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://employee-management-app-ruddy.vercel.app"
+    },
+    "tags": ["personal"]
+}

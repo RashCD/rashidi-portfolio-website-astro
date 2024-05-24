@@ -1,0 +1,17 @@
+{
+    "id": 1.2,
+    "name": "Suria Labs Development Sdn Bhd",
+    "description": "Suria Labs, a Malaysian development gem, crafts high-quality web and mobile apps using cutting-edge tech like Ruby on Rails and React Native. Their passionate team tackles challenges head-on, helping startups and businesses build robust, sustainable software for the long haul.",
+    "images": [
+        "/images/surialabs-landing.png",
+        "/images/surialabs-flashcash-demo.png",
+        "/images/surialabs-flashcash.jpeg",
+        "images/surialabs-smec.jpeg"
+    ],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://surialabs.com"
+    },
+    "tags": ["professional"]
+}

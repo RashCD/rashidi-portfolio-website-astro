@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+
+const getProjectSlug = (name: string) => {
+	return name.toLowerCase().replace(/ /g, "-");
+};
+
+// return string with not more than 250 words
+const simplifyParagraph = (description: string) => {
+	return description.split(" ").slice(0, 20).join(" ") + "...";
+};
+
+const projects = (await getCollection("project"))
+	// the number is 1.1, 1.2, 1.3, etc. and then 2.1, 2.2, 2.3, etc. and then 3.1, 3.2, 3.3, etc. and so on
+	// sort by id in asending order 1.3, 1.2, 1.1 comes first, then 2.3, 2.2, 2.1, then 3.3, 3.2, 3.1, etc.
+	.sort((a, b) => {
+		const [aInt, aDec] = a.data.id.toString().split(".").map(Number);
+		const [bInt, bDec] = b.data.id.toString().split(".").map(Number);
+
+		if (bDec && aDec && aInt === bInt) {
+			// If the integer parts are the same, compare the decimal parts in descending order
+			return bDec - aDec;
+		} else if (aInt && bInt) {
+			// If the integer parts are different, compare the integer parts in ascending order
+			return aInt - bInt;
+		}
+
+		return -1;
+	})
+	.slice(0, 2)
+	.map((p) => p.data)
+	.map((p) => ({
+		...p,
+		slug: getProjectSlug(p.name),
+		description: simplifyParagraph(p.description),
+	}));
+---
+
+<section class="py-12" id="projects">
+	<h2 class="mb-6 text-2xl font-bold">Projects</h2>
+	<div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
+		{
+			projects.map((project) => (
+				<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+					<div class="flex flex-col space-y-1.5 p-6">
+						<h3 class="text-2xl font-semibold leading-none tracking-tight">
+							{project.name}
+						</h3>
+					</div>
+					<div class="p-6 pt-0 text-justify">
+						<p class="text-gray-500">{project.description}</p>
+					</div>
+					<div class="flex items-center p-6 pt-0">
+						<a
+							href={project.slug}
+							class="text-blue-500 hover:text-blue-700"
+						>
+							View Project
+						</a>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>
