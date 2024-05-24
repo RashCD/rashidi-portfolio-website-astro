@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+
+const formatDate = (dateString: string) => {
+	return new Date(dateString).toLocaleDateString("en-US", {
+		month: "short",
+		year: "numeric",
+	});
+};
+
+const workExp = (await getCollection("work"))
+	.sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
+	.slice(0, 2)
+	.map((w) => ({
+		...w,
+		data: {
+			...w.data,
+			startDate: formatDate(w.data.startDate),
+			endDate: formatDate(w.data.endDate),
+		},
+	}));
+---
+
+<section class="bg-gray-50 px-6 py-12" id="experience">
+	<h2 class="mb-6 text-2xl font-bold">Experiences</h2>
+
+	<div class="space-y-6">
+		{
+			workExp.map((w) => (
+				<div>
+					<h3 class="text-xl font-bold">
+						{w.data.title} - {w.data.organization}
+					</h3>
+					<p class="text-gray-500 text-sm">
+						{w.data.startDate} - {w.data.endDate}
+					</p>
+					<p class="mt-2 text-gray-500 text-md">
+						{w.data.description}
+					</p>
+				</div>
+			))
+		}
+	</div>
+</section>
