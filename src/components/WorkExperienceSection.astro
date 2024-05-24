@@ -1,12 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-
-const formatDate = (dateString: string) => {
-	return new Date(dateString).toLocaleDateString("en-US", {
-		month: "short",
-		year: "numeric",
-	});
-};
+import { formatDate } from "../utils/date";
 
 const workExp = (await getCollection("work"))
 	.sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
