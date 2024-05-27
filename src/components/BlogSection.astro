@@ -5,7 +5,12 @@ const blogs = (await getCollection("blog")).slice(0, 2).map((b) => b.data);
 ---
 
 <section class="py-12" id="blog">
-	<h2 class="mb-6 text-2xl font-bold">Blogs</h2>
+	<h2 class="mb-6 text-2xl font-bold text-black">
+		<a class="group text-black" href="/blog">
+			<span class="group-hover:underline">Blogs</span>
+			<span class="invisible group-hover:visible"> > </span>
+		</a>
+	</h2>
 	<div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
 		{
 			blogs.map((blog) => (
