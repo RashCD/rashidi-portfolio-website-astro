@@ -1,10 +1,22 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import Base from "../layouts/Base.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import Base from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("project")).map((p) => p.data);
 ---
 
 <Base>
 	<div class="px-3">
-		<ProjectCard title="Test" description="test description" />
+		{
+			projects.map((project) => (
+				<ProjectCard
+					title={project.name}
+					name={project.name}
+					description={project.description}
+					image={project.images}
+				/>
+			))
+		}
 	</div>
 </Base>
