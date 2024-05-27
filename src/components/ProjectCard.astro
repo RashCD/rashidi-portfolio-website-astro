@@ -1,0 +1,39 @@
+---
+import {
+	Card,
+	CardContent,
+	CardHeader,
+	CardTitle,
+	CardDescription,
+	CardFooter,
+} from "./Card";
+
+const { name, description, image } = Astro.props;
+---
+
+<Card key={name} className="w-full overflow-hidden sm:w-1/2">
+	<CardContent className="p-0">
+		<img
+			src={image}
+			alt={name}
+			style={{
+				objectFit: "contain",
+				width: "100%",
+				height: "100%",
+				aspectRatio: "3 / 2",
+			}}
+		/>
+	</CardContent>
+	<CardHeader>
+		<CardTitle>{name}</CardTitle>
+		<CardDescription className="text-justify">{description}</CardDescription
+		>
+	</CardHeader>
+	<CardFooter>
+		{
+			/* <Link to={'123'} className="text-blue-500">
+			Read More
+		</Link> */
+		}
+	</CardFooter>
+</Card>
