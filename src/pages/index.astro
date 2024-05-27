@@ -1,29 +1,16 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import AboutSection from "../components/AboutSection.astro";
 import WorkExperienceSection from "../components/WorkExperienceSection.astro";
 import ProjectSection from "../components/ProjectSection.astro";
 import EducationSection from "../components/EducationSection.astro";
 import BlogSection from "../components/BlogSection.astro";
+import Base from "../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<AboutSection />
-			<WorkExperienceSection />
-			<ProjectSection />
-			<EducationSection />
-			<BlogSection />
-		</main>
-		<Footer />
-	</body>
-</html>
+<Base>
+	<AboutSection />
+	<WorkExperienceSection />
+	<ProjectSection />
+	<EducationSection />
+	<BlogSection />
+</Base>
