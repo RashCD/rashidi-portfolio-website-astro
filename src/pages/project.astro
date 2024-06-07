@@ -1,22 +1,43 @@
 ---
-import ProjectCard from "@/components/ProjectCard.astro";
+import ProjectTabs from "@/components/ProjectTabs";
 import Base from "@/layouts/Base.astro";
 import { getCollection } from "astro:content";
 
-const projects = (await getCollection("project")).map((p) => p.data);
+const proProjects = (await getCollection("project"))
+	.filter((p) => p.data.tags.includes("professional"))
+	.map((p) => p.data)
+	.sort((a, b) => b.id - a.id);
+
+const freeProjects = (await getCollection("project"))
+	.filter((p) => p.data.tags.includes("freelance"))
+	.map((p) => p.data)
+	.sort((a, b) => b.id - a.id);
+
+const personalProjects = (await getCollection("project"))
+	.filter((p) => p.data.tags.includes("personal"))
+	.map((p) => p.data)
+	.sort((a, b) => b.id - a.id);
 ---
 
 <Base>
-	<div class="px-3">
-		{
-			projects.map((project) => (
-				<ProjectCard
-					title={project.name}
-					name={project.name}
-					description={project.description}
-					image={project.images}
-				/>
-			))
-		}
-	</div>
+	<ProjectTabs
+		client:load
+		projects={[
+			{
+				title: "Professional Careers",
+				value: "Professional",
+				contents: proProjects,
+			},
+			{
+				title: "Freelance Projects",
+				value: "Freelance",
+				contents: freeProjects,
+			},
+			{
+				title: "Personal Playtime",
+				value: "Personal",
+				contents: personalProjects,
+			},
+		]}
+	/>
 </Base>
