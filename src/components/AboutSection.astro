@@ -1,8 +1,8 @@
 ---
-
+import { Image } from "astro:assets";
 ---
 
-<section class="w-full" id="about">
+<section class="w-full mb-12" id="about">
 	<div class="px-4 md:px-6">
 		<div class="flex flex-col items-center space-y-4 text-center">
 			<span
@@ -11,10 +11,16 @@
 				<span
 					class="flex h-full w-full items-center justify-center rounded-full bg-gray-200"
 				>
-					JD
+					<Image
+						width={110}
+						height={110}
+						alt="image of rashidi"
+						src="/images/rashidi-image-small.jpeg"
+						class="rounded-full"
+					/>
 				</span>
 			</span>
-			<h1 class="text-3xl font-bold">John Doe</h1>
+			<h1 class="text-3xl font-bold">Rashidi Rashid</h1>
 			<p class="w-full text-gray-500 text-xl">
 				A highly motivated and experienced web developer, I have a
 				proven track record of building complete web applications from

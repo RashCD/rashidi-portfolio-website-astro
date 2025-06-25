@@ -1,16 +1,26 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { Image } from "astro:assets";
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/" aria-label={SITE_TITLE}>
+				<Image
+					width={50}
+					height={50}
+					alt="image of rashidi"
+					src="/images/rashidi-image-small.jpeg"
+					class="rounded-full"
+				/>
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/project">Project</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -55,6 +65,7 @@ import { SITE_TITLE } from "../consts";
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;

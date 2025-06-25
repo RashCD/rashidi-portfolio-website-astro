@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import { Separator } from "./ui/separator";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 
 type ProjectTabsType = {
@@ -23,12 +24,12 @@ type ProjectTabsType = {
 
 const ProjectTabs = ({ projects }: ProjectTabsType) => {
 	return (
-		<div className="px-3">
+		<div className="">
 			<Tabs
 				defaultValue={projects[0]!.value}
 				className="d-flex justify-center"
 			>
-				<div className="grid overflow-x-auto">
+				<div className="grid overflow-x-auto mb-4">
 					<TabsList className="justify-self-center">
 						{projects.map((project) => (
 							<TabsTrigger
@@ -40,6 +41,7 @@ const ProjectTabs = ({ projects }: ProjectTabsType) => {
 						))}
 					</TabsList>
 				</div>
+				<Separator />
 				{projects.map((project) => (
 					<TabsContent key={project.value} value={project.value}>
 						{project.contents.map((content) => (
