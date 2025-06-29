@@ -14,14 +14,13 @@ const blog = defineCollection({
 });
 
 const work = defineCollection({
-	type: "data",
+	type: "content",
 	schema: z.object({
 		id: z.number(),
 		title: z.string(),
 		organization: z.string(),
 		startDate: z.string(),
 		endDate: z.string(),
-		description: z.string(),
 	}),
 });
 

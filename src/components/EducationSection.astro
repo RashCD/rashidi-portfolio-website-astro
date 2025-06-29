@@ -5,32 +5,42 @@ import { formatDate } from "../utils/date";
 const educations = (await getCollection("education"))
 	.sort((a, b) => Date.parse(b.data.startDate) - Date.parse(a.data.startDate))
 	.slice(0, 2)
-	.map((edu) => edu.data)
 	.map((edu) => ({
 		...edu,
-		startDate: formatDate(edu.startDate),
-		endDate: formatDate(edu.endDate),
+		data: {
+			...edu.data,
+			startDate: formatDate(edu.data.startDate),
+			endDate: formatDate(edu.data.endDate),
+		},
 	}));
 ---
 
-<section class="bg-gray-50 px-6 py-12" id="experience">
+<section class="bg-gray-50 px-6 py-12 rounded-lg" id="experience">
 	<h2 class="mb-6 text-2xl font-bold">Educations</h2>
 	<div class="space-y-6">
 		{
-			educations.map((edu) => (
-				<div>
-					<h3 class="text-xl font-bold">{edu.school}</h3>
-					<div class="flex gap-3 text-lg">
-						<p class="text-gray-500">{edu.degree}</p>
-						<p class="text-gray-500">|</p>
-						<p class="text-gray-500">{edu.fieldOfStudy}</p>
-					</div>
-					<p class="text-gray-500 text-sm">
-						{edu.startDate} - {edu.endDate}
-					</p>
-					<p class="mt-2 text-gray-500">Test</p>
-				</div>
-			))
+			educations.map(async (edu) => {
+				return (
+					<Fragment>
+						<div>
+							<h3 class="text-xl font-bold">{edu.data.school}</h3>
+							<div class="flex gap-3 text-lg">
+								<p class="text-gray-500">{edu.data.degree}</p>
+								<p class="text-gray-500">|</p>
+								<p class="text-gray-500">
+									{edu.data.fieldOfStudy}
+								</p>
+							</div>
+							<p class="text-gray-500 text-sm">
+								{edu.data.startDate} - {edu.data.endDate}
+							</p>
+							<p class="mt-2 text-gray-500">
+								{edu.data.description}
+							</p>
+						</div>
+					</Fragment>
+				);
+			})
 		}
 	</div>
 </section>

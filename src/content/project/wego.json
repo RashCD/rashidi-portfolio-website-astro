@@ -1,0 +1,12 @@
+{
+    "id": 1.5,
+    "name": "Wego",
+    "description": "Wego is a leading online travel marketplace that helps users discover and compare the best deals on flights and hotels from hundreds of travel sites worldwide. With a user-friendly platform and mobile app, Wego enables millions of travelers to find, book, and manage their travel plans efficiently, offering access to thousands of destinations and a wide range of travel options.",
+    "images": ["images/decube-landing.png"],
+    "visit": {
+        "ios": "",
+        "android": "",
+        "web": "https://www.wego.com"
+    },
+    "tags": ["professional"]
+}

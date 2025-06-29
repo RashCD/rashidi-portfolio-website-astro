@@ -1,9 +1,9 @@
 {
     "school": "Universiti Teknologi Malaysia (UTM)",
-    "degree": "Master Degree",
-    "fieldOfStudy": "Information Technology Management",
-    "description": "Test",
-    "startDate": "2017-01-01T00:00:00.000Z",
-    "endDate": "2018-10-01T00:00:00.000Z",
-    "graduationYear": 2018
+    "degree": "Master of Information Technology",
+    "fieldOfStudy": "IT Management",
+    "description": "Best Postgraduate Student Award. Research published at IRICT (International Conference of Reliable Information Communication Technology).",
+    "startDate": "2015-06-01T00:00:00.000Z",
+    "endDate": "2017-01-01T00:00:00.000Z",
+    "graduationYear": 2017
 }
