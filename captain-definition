@@ -1,4 +1,11 @@
 {
   "schemaVersion": 2,
-  "templateId":"node/20.0.0",
+  "dockerfileLines": [
+    "FROM node:20-alpine",
+    "WORKDIR /usr/src/app",
+    "COPY . .",
+    "RUN npm install -g pnpm@8.7.1 serve && pnpm install --frozen-lockfile && pnpm run build",
+    "EXPOSE 3000",
+    "CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]"
+  ]
 }
