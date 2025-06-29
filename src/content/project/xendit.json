@@ -2,7 +2,7 @@
     "id": 1.4,
     "name": "Xendit",
     "description": "Xendit is a Southeast Asian fintech company, focusing on simplifying payments for businesses in South East Asia. They act as a payment gateway, processing millions of transactions monthly, and offer additional tools like automated payouts, fraud detection, and data services.",
-    "images": ["images/xendit-landing.png"],
+    "images": ["/images/xendit-landing.png"],
     "visit": {
         "ios": "",
         "android": "",

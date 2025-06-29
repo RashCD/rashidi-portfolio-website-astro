@@ -3,11 +3,11 @@
     "name": "Fave Asia Sdn Bhd",
     "description": "Founded in 2015, Fave bridges the gap between consumers and merchants in Southeast Asia. Their user-friendly app connects customers to deals on dining, beauty, and entertainment, offering cashback and discounts. Businesses benefit from Fave's digital marketing tools and data insights, helping them reach new customers and grow. Fave is a fintech leader aiming to maximize joy and value in every shopping experience, propelling the offline world towards a digital future.",
     "images": [
-        "images/fave-landing.jpeg",
-        "images/fave-consumer-page.jpeg",
-        "images/fave-consumer.jpeg",
-        "images/fave-merchant-web.jpeg",
-        "images/fave-mobile-web.jpeg"
+        "/images/fave-landing.jpeg",
+        "/images/fave-consumer-page.jpeg",
+        "/images/fave-consumer.jpeg",
+        "/images/fave-merchant-web.jpeg",
+        "/images/fave-mobile-web.jpeg"
     ],
     "visit": {
         "ios": "https://apps.apple.com/US/app/id1135179082",
